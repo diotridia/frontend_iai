@@ -8,7 +8,7 @@ const NavbarComponent = () => {
     return (
         <div>
         <BrowserRouter>
-            <Navbar bg="warning" variant="dark">
+            <Navbar bg="info" variant="dark">
                 <Navbar.Brand className="ml-4"><img src={logo} height={30}/></Navbar.Brand>
                 <Nav className="ml-auto mr-4">
                     <Nav.Link className="nav-link" activeClassName="active" exact
