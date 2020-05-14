@@ -28,7 +28,7 @@ class BookList extends React.Component {
     this.setState({ show: true });
     this.getBook();
     Swal.fire("Book", "Berhasil disimpan!", "success");
-  };    
+  };
 
   handleSearch(query){
     if(query){
@@ -43,7 +43,7 @@ class BookList extends React.Component {
     } else {
       this.getBook()
     }
-    
+
   }
 
 showDetail =(id)=>{

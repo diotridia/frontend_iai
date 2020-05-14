@@ -1,5 +1,5 @@
 .search-container {
-    max-width: 800px;
+    max-width: 600px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 9px;
     margin: 8px auto;
@@ -21,7 +21,7 @@
 
   .search-container > input:focus {
       outline: 0;
-      border-bottom: 1px solid #6934e6;
+      border-bottom: 1px solid #17a2b8;
   }
 
   .search-container > input:focus::placeholder {
@@ -38,7 +38,7 @@
       cursor: pointer;
       margin-left: auto;
       padding: 16px;
-      background-color: #6934e6;
+      background-color: #17a2b8;
       color: white;
       border: 0;
       text-transform: uppercase;
