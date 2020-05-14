@@ -51,7 +51,7 @@ class ModalComponent extends React.Component {
     this.getBook();
   };
 
-  saveWayang = () => {
+  saveBuku = () => {
     let data = this.state.data;
     const options = {
       headers: { "Content-Type": "application/json" },
@@ -143,7 +143,7 @@ class ModalComponent extends React.Component {
                   onChange={this.handleFormChange}
                 />
               </Form.Group>
-              <Button variant="primary" onClick={this.saveWayang}>
+              <Button variant="primary" onClick={this.saveBuku}>
                 Save
               </Button>
               &nbsp;

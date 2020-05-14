@@ -1,13 +1,13 @@
 .search-container {
     max-width: 800px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    margin: 20px auto;
+    padding: 9px;
+    margin: 8px auto;
     border-radius: 5px;
     display: flex;
     position: sticky;
     z-index: 50;
-    top: 10px;
+    top: 5px;
     background-color: white;
   }
 
@@ -29,7 +29,7 @@
   }
 
   .search-container >  input::placeholder {
-      color: #6934e6;
+      color: #808080;
       font-weight: normal;
   }
 
@@ -44,14 +44,14 @@
       text-transform: uppercase;
   }
 
-  @media screen and (max-width: 550px){
+  @media screen and (max-width: 200px){
       .search-container {
           flex-direction: column;
           position: static;
       }
 
       .search-container > input {
-          width: 100%;
+          width: 80%;
           margin-bottom: 12px;
       }
 

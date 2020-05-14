@@ -21,22 +21,22 @@ class DetailModal extends React.Component {
   }
 
   componentDidMount() {
-    console.log("cek "+this.props.idWayang)
+    console.log("cek "+this.props.idBook)
   }
 
   componentWillReceiveProps(nextProps){
-    console.log("cek "+nextProps.idWayang)
-    if (nextProps.idWayang > 0) {
-      this.setState({ idWayang: nextProps.idWayang });
-      this.getWayang();
+    console.log("cek "+nextProps.idBook)
+    if (nextProps.idBook > 0) {
+      this.setState({ idBook: nextProps.idBook });
+      this.getBook();
       this.setState({ modalShow: nextProps.show });
       console.log(this.state.data)
-      console.log(nextProps.idWayang)
+      console.log(nextProps.idBook)
     }
   }
 
-  getWayang = () => {
-    API.get(`/wayang/${this.state.idWayang}`)
+  getBook = () => {
+    API.get(`/book/${this.state.idBook}`)
       .then((res) => {
         this.setState({ data: res.data.result });
         this.forceUpdate()
@@ -57,7 +57,7 @@ class DetailModal extends React.Component {
         >
         <Modal.Header>
             <Modal.Title id="example-modal-sizes-title-md">
-              Detail Wayang
+              Book Detail
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -70,36 +70,16 @@ class DetailModal extends React.Component {
                   <table>
                   <tbody>
                     <tr>
-                      <td>Nama</td>
-                      <td>: {this.state.data.nama}</td>
+                      <td>Title</td>
+                      <td>: {this.state.data.title}</td>
                     </tr>
                     <tr>
-                      <td>Golongan</td>
-                      <td>: {this.state.data.golongan}</td>
+                      <td>Author</td>
+                      <td>: {this.state.data.author}</td>
                     </tr>
                     <tr>
-                      <td>Kasta</td>
-                      <td>: {this.state.data.kasta}</td>
-                    </tr>
-                    <tr>
-                      <td>Senjata</td>
-                      <td>: {this.state.data.senjata}</td>
-                    </tr>
-                    <tr>
-                      <td>Ayah</td>
-                      <td>: {this.state.data.ayah}</td>
-                    </tr>
-                    <tr>
-                      <td>Ibu</td>
-                      <td>: {this.state.data.ibu}</td>
-                    </tr>
-                    <tr>
-                      <td>Pasangan</td>
-                      <td>: {this.state.data.pasangan}</td>
-                    </tr>
-                    <tr>
-                      <td>Anak</td>
-                      <td>: {this.state.data.anak}</td>
+                      <td>Publisher</td>
+                      <td>: {this.state.data.publisher}</td>
                     </tr>
                     </tbody>
                   </table>

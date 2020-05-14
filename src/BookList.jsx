@@ -54,10 +54,10 @@ showDetail =(id)=>{
   console.log("tes "+id)
 }
 
-  getWayang() {
-    API.get("/wayang")
+  getBook() {
+    API.get("/book")
       .then((res) => {
-        this.setState({ wayangs: res.data.result });
+        this.setState({ books: res.data.result });
       })
       .catch((error) => {
         this.setState({ error });
@@ -65,12 +65,12 @@ showDetail =(id)=>{
     this.render();
   }
 
-  deleteWayang = (id) => {
+  deleteBook = (id) => {
     this.setState({ delete: true });
-    API.delete("/wayang/" + id)
+    API.delete("/book/" + id)
       .then((res) => {
-        this.getWayang();
-        Swal.fire("Yeay", "Berhasil dihapus!", "success");
+        this.getBook();
+        Swal.fire("Book", "Berhasil dihapus!", "success");
       })
       .catch((error) => {
         this.setState({ error });
@@ -80,13 +80,13 @@ showDetail =(id)=>{
   };
 
   render() {
-    const { wayangs, error, deleting } = this.state;
+    const { books, error, deleting } = this.state;
     return (
       <div>
         <SearchBar onSubmit={val => this.handleSearch(val)} />
-        <DetailModal idWayang={this.state.idDetail} show={this.state.showDetail}/>
+        <DetailModal idBook={this.state.idDetail} show={this.state.showDetail}/>
         <ModalComponent
-          text="Tambah Wayang"
+          text="Tambah Buku"
           onSubmit={(value) => this.handleFS(value)}
         />
         <Row style={{ marginTop: 10 }}>
@@ -95,20 +95,20 @@ showDetail =(id)=>{
               Gagal memuat data <br></br> Error : {error.message}
             </div>
           ) : (
-            wayangs.map((wayang) => (
-              <Col sm={6} md={3} lg={2} key={wayang.id}>
-                <Card onClick={event => this.showDetail(wayang.id)}>
+            books.map((book) => (
+              <Col sm={6} md={3} lg={2} key={book.id}>
+                <Card onClick={event => this.showDetail(book.id)}>
                   <div style={{ height: 250, position: "relative" }}>
-                    <Img src={wayang.image_url} style={{ width: "100%" }} />
+                    <Img src={book.image_url} style={{ width: "100%" }} />
                   </div>
                   <Card.Body>
-                    <Card.Title as="h6">{wayang.nama}</Card.Title>
+                    <Card.Title as="h6">{book.title}</Card.Title>
                     <Card.Text></Card.Text>
                   </Card.Body>
                   <Card.Footer>
                     <Row>
                       <ModalComponent
-                        id={wayang.id}
+                        id={book.id}
                         text="Ubah"
                         onSubmit={(value) => this.handleFS(value)}
                       />
@@ -117,7 +117,7 @@ showDetail =(id)=>{
                         size="sm"
                         variant="danger"
                         disabled={deleting}
-                        onClick={() => this.deleteWayang(wayang.id)}
+                        onClick={() => this.deleteBook(book.id)}
                       >
                         {deleting ? "Tunggu.." : "Hapus"}
                       </Button>

@@ -37,19 +37,10 @@ class AddForm extends React.Component{
                             <Card.Img variant="top" src={book.image_url} />
                             <Card.Body>
                             <Card.Title>{book.nama}</Card.Title>
-                            <Card.Text>
-                                {/* <p>{wayang.golongan}</p>
-                                <p>{wayang.kasta}</p>
-                                <p>{wayang.senjata}</p>
-                                <p>{wayang.ayah}</p>
-                                <p>{wayang.ibu}</p>
-                                <p>{wayang.pasangan}</p>
-                                <p>{wayang.anak}</p> */}
-                            </Card.Text>
                             </Card.Body>
                             <Card.Footer>
                                 <Button onClick={() => this.props.editBook(book.id)}>Edit</Button>
-                                &nbsp;<Button variant="danger" onClick={() => this.deleteBook(wayang.id)}>Delete</Button>
+                                &nbsp;<Button variant="danger" onClick={() => this.deleteBook(book.id)}>Delete</Button>
                             </Card.Footer>
                         </Card>
                     </Col>

@@ -15,5 +15,3 @@ class Home extends Component {
   }
 
 export default Home
-
-//warna dasar : #61085a
