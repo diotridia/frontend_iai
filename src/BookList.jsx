@@ -98,7 +98,7 @@ showDetail =(id)=>{
             books.map((book) => (
               <Col sm={6} md={3} lg={2} key={book.id}>
                 <Card onClick={event => this.showDetail(book.id)}>
-                  <div style={{ height: 250, position: "relative" }}>
+                  <div style={{ height: 180, position: "relative" }}>
                     <Img src={book.image_url} style={{ width: "100%" }} />
                   </div>
                   <Card.Body>
